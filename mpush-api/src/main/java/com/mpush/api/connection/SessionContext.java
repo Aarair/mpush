@@ -66,7 +66,10 @@ public final class SessionContext {
         this.userId = userId;
         return this;
     }
-
+    public SessionContext setTags(String tags) {
+        this.tags = tags;
+        return this;
+    }
     public void setHeartbeat(int heartbeat) {
         this.heartbeat = heartbeat;
     }

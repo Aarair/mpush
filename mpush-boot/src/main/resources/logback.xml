@@ -195,7 +195,7 @@
         <appender-ref ref="CONNECTION_APPENDER"/>
     </logger>
     <logger name="mpush.heartbeat.log" additivity="false">
-        <level value="debug"/>
+        <level value="warn"/>
         <appender-ref ref="HEARTBEAT_APPENDER"/>
     </logger>
     <logger name="mpush.http.log" additivity="false">

@@ -158,10 +158,14 @@ public final class ServerConnectionManager implements ConnectionManager {
             Connection connection = this.connection;
 
             if (connection == null || !connection.isConnected()) {
-                Logs.HB.info("heartbeat timeout times={}, connection disconnected, conn={}", timeoutTimes, connection);
+                Logs.HB.warn("heartbeat timeout times={}, connection disconnected, conn={}", timeoutTimes, connection);
                 return;
             }
-
+            //检查userId是否为空
+            if (connection.getSessionContext() == null || connection.getSessionContext().userId == null) {
+                connection.close();
+                return;
+            }
             if (connection.isReadTimeout()) {
                 if (++timeoutTimes > CC.mp.core.max_hb_timeout_times) {
                     connection.close();

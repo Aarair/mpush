@@ -45,6 +45,10 @@ public final class ClientPushHandler extends BaseMessageHandler<PushMessage> imp
 
     @Override
     public void handle(PushMessage message) {
+        if(message.getConnection().getSessionContext().userId == null ||
+                message.getConnection().getSessionContext().userId == ""){
+            message.getConnection().close();
+        }
         String context = new String(message.content);
         Logs.PUSH.info("receive client push message={},context={}", message, context);
         Logs.CLIENT_PUSH.info("CLIENT_PUSH, userId={},context={}",message.getConnection().getSessionContext().userId, context);
