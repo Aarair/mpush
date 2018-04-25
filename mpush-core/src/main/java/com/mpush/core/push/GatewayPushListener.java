@@ -146,6 +146,7 @@ public final class GatewayPushListener implements PushListener<GatewayPushMessag
     @Override
     public void onOffline(GatewayPushMessage message, Object[] timePoints) {
         if (message.getConnection().isConnected()) {
+            message.getConnection().close();
             pushCenter.addTask(new PushTask() {
                 @Override
                 public ScheduledExecutorService getExecutor() {

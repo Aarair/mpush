@@ -163,6 +163,7 @@ public final class ServerConnectionManager implements ConnectionManager {
             }
             //检查userId是否为空
             if (connection.getSessionContext() == null || connection.getSessionContext().userId == null) {
+                Logs.CONN.error("heartbeat connection userId is null,connection do close conn={}", connection);
                 connection.close();
                 return;
             }
@@ -172,7 +173,7 @@ public final class ServerConnectionManager implements ConnectionManager {
                     Logs.HB.warn("client heartbeat timeout times={}, do close conn={}", timeoutTimes, connection);
                     return;
                 } else {
-                    Logs.HB.info("client heartbeat timeout times={}, connection={}", timeoutTimes, connection);
+                    Logs.HB.warn("client heartbeat timeout times={}, connection={}", timeoutTimes, connection);
                 }
             } else {
                 timeoutTimes = 0;

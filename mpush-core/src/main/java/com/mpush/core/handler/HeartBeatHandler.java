@@ -33,6 +33,12 @@ public final class HeartBeatHandler implements MessageHandler {
 
     @Override
     public void handle(Packet packet, Connection connection) {
+        //检查userId是否为空
+        if (connection.getSessionContext() == null || connection.getSessionContext().userId == null) {
+            Logs.CONN.error("heartbeat connection userId is null,connection do close conn={}", connection);
+            connection.close();
+            return;
+        }
         connection.send(packet);//ping -> pong
         Logs.HB.info("ping -> pong, {}", connection);
     }

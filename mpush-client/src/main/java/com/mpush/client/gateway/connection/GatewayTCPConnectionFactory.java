@@ -140,8 +140,8 @@ public class GatewayTCPConnectionFactory extends GatewayConnectionFactory {
     @Override
     public <M extends BaseMessage> boolean send(String hostAndPort, Function<Connection, M> creator, Consumer<M> sender) {
         Connection connection = getConnection(hostAndPort);
-        if (connection == null) return false;// gateway server 找不到，直接返回推送失败
-
+        // gateway server 找不到 或者 userId为空，直接返回推送失败
+        if (connection == null ) return false;
         sender.accept(creator.apply(connection));
         return true;
     }

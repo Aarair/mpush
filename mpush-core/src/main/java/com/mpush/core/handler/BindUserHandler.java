@@ -163,11 +163,12 @@ public final class BindUserHandler extends BaseMessageHandler<BindUserMessage> {
                 EventBus.post(new UserOfflineEvent(message.getConnection(), userId));
                 OkMessage.from(message).setData("unbind success").sendRaw();
                 Logs.CONN.info("unbind user success, userId={}, session={}", userId, context);
-                Logs.CLIENT_CONN.info("CLIENT_CONN_DIS,userId={},userId={}, session={}", message.userId, context);
+//                Logs.CLIENT_CONN.info("UNBIND_USER SUCCESS,userId={}, session={}", userId, context);
 
             } else {
                 ErrorMessage.from(message).setReason("unbind failed").sendRaw();
                 Logs.CONN.error("unbind user failure, unRegister router failure, userId={}, session={}", userId, context);
+//                Logs.CLIENT_CONN.info("UNBIND_USER FAILURE,userId={}, session={}", userId, context);
             }
         } else {
             ErrorMessage.from(message).setReason("not handshake").close();

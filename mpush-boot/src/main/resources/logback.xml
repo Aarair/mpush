@@ -10,7 +10,7 @@
         <file>${log.home}/mpush.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log.home}/mpush.log.%d{yyyy-MM-dd}
+            <fileNamePattern>${log.home}/logback/mpush.log.%d{yyyy-MM-dd}
             </fileNamePattern>
             <maxHistory>10</maxHistory>
         </rollingPolicy>
@@ -29,7 +29,7 @@
         </filter>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log.home}/info-mpush.log.%d{yyyy-MM-dd}
+            <fileNamePattern>${log.home}/logback/info-mpush.log.%d{yyyy-MM-dd}
             </fileNamePattern>
             <maxHistory>3</maxHistory>
         </rollingPolicy>
@@ -48,7 +48,7 @@
         </filter>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log.home}/debug-mpush.log.%d{yyyy-MM-dd}
+            <fileNamePattern>${log.home}/logback/debug-mpush.log.%d{yyyy-MM-dd}
             </fileNamePattern>
             <maxHistory>3</maxHistory>
         </rollingPolicy>
@@ -62,7 +62,7 @@
         <file>${log.home}/monitor-mpush.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log.home}/monitor-mpush.log.%d{yyyy-MM-dd}
+            <fileNamePattern>${log.home}/logback/monitor-mpush.log.%d{yyyy-MM-dd}
             </fileNamePattern>
             <maxHistory>5</maxHistory>
         </rollingPolicy>
@@ -76,7 +76,7 @@
         <file>${log.home}/conn-mpush.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log.home}/conn-mpush.log.%d{yyyy-MM-dd}
+            <fileNamePattern>${log.home}/logback/conn-mpush.log.%d{yyyy-MM-dd}
             </fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
@@ -90,7 +90,7 @@
         <file>${log.home}/push-mpush.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log.home}/push-mpush.log.%d{yyyy-MM-dd}
+            <fileNamePattern>${log.home}/logback/push-mpush.log.%d{yyyy-MM-dd}
             </fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
@@ -104,7 +104,7 @@
         <file>${log.home}/heartbeat-mpush.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log.home}/heartbeat-mpush.log.%d{yyyy-MM-dd}
+            <fileNamePattern>${log.home}/logback/heartbeat-mpush.log.%d{yyyy-MM-dd}
             </fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
@@ -118,7 +118,7 @@
         <file>${log.home}/cache-mpush.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log.home}/cache-mpush.log.%d{yyyy-MM-dd}
+            <fileNamePattern>${log.home}/logback/cache-mpush.log.%d{yyyy-MM-dd}
             </fileNamePattern>
             <maxHistory>5</maxHistory>
         </rollingPolicy>
@@ -132,7 +132,7 @@
         <file>${log.home}/http-mpush.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log.home}/http-mpush.log.%d{yyyy-MM-dd}
+            <fileNamePattern>${log.home}/logback/http-mpush.log.%d{yyyy-MM-dd}
             </fileNamePattern>
             <maxHistory>5</maxHistory>
         </rollingPolicy>
@@ -146,7 +146,7 @@
         <file>${log.home}/srd-mpush.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log.home}/srd-mpush.log.%d{yyyy-MM-dd}
+            <fileNamePattern>${log.home}/logback/srd-mpush.log.%d{yyyy-MM-dd}
             </fileNamePattern>
             <maxHistory>10</maxHistory>
         </rollingPolicy>
@@ -160,7 +160,7 @@
         <file>${log.home}/profile-mpush.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log.home}/profile-mpush.log.%d{yyyy-MM-dd}
+            <fileNamePattern>${log.home}/logback/profile-mpush.log.%d{yyyy-MM-dd}
             </fileNamePattern>
             <maxHistory>10</maxHistory>
         </rollingPolicy>

@@ -20,13 +20,15 @@
 package com.mpush.client.push;
 
 import com.mpush.api.Constants;
-import com.mpush.api.push.*;
+import com.mpush.api.push.AckModel;
+import com.mpush.api.push.PushCallback;
+import com.mpush.api.push.PushContext;
+import com.mpush.api.push.PushMsg;
+import com.mpush.api.push.PushResult;
 import com.mpush.api.router.ClientLocation;
 import com.mpush.client.MPushClient;
-import com.mpush.client.gateway.connection.GatewayConnectionFactory;
 import com.mpush.common.message.gateway.GatewayPushMessage;
 import com.mpush.common.push.GatewayPushResult;
-import com.mpush.common.router.CachedRemoteRouterManager;
 import com.mpush.common.router.RemoteRouter;
 import com.mpush.tools.Jsons;
 import com.mpush.tools.common.TimeLine;
@@ -213,6 +215,7 @@ public final class PushRequest extends FutureTask<PushResult> {
     }
 
     private void timeout() {
+        mPushClient.getCachedRemoteRouterManager().invalidateLocalCache(userId);
         if (mPushClient.getPushRequestBus().getAndRemove(sessionId) != null) {
             submit(Status.timeout);
         }
@@ -223,6 +226,7 @@ public final class PushRequest extends FutureTask<PushResult> {
     }
 
     private void failure() {
+        mPushClient.getCachedRemoteRouterManager().invalidateLocalCache(userId);
         submit(Status.failure);
     }
 

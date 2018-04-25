@@ -47,10 +47,12 @@ public final class ClientPushHandler extends BaseMessageHandler<PushMessage> imp
     public void handle(PushMessage message) {
         if(message.getConnection().getSessionContext().userId == null ||
                 message.getConnection().getSessionContext().userId == ""){
+            Logs.CONN.error("CLIENT_PUSH connection userId is null,connection do close conn={}", message.getConnection());
             message.getConnection().close();
+            return ;
         }
         String context = new String(message.content);
-        Logs.PUSH.info("receive client push message={},context={}", message, context);
+        Logs.PUSH.info("receive client push userId={},context={}",message.getConnection().getSessionContext().userId, context);
         Logs.CLIENT_PUSH.info("CLIENT_PUSH, userId={},context={}",message.getConnection().getSessionContext().userId, context);
 
         if (message.autoAck()) {
